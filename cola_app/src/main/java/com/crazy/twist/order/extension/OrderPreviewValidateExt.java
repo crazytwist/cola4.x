@@ -17,9 +17,9 @@ public class OrderPreviewValidateExt implements OrderPreviewValidateExtPt {
 
     @Override
     public void validate(OrderPreviewQry orderPreviewQry) {
-        System.out.println("[数据校验] : tob 业务 下 猪肉 的 渠道方式 ");
-        if (!orderPreviewQry.getOrderDTO().getOrderType().equals("Tob")) {
-            throw new BizException("该订单非Tob订单");
-        }
+        System.out.println("02 [数据校验] : tob 业务 下 猪肉 的 渠道方式 ");
+//        if (!orderPreviewQry.getOrderDTO().getOrderType().equals("Tob")) {
+//            throw new BizException("该订单非Tob订单");
+//        }
     }
 }

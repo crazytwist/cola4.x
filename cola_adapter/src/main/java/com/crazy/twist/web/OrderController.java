@@ -8,6 +8,7 @@ import com.crazy.twist.dto.cmd.OrderCreateCmd;
 import com.crazy.twist.dto.data.OrderDTO;
 import com.crazy.twist.dto.qry.OrderPreviewQry;
 import com.crazy.twist.model.OrderCreateRequest;
+import com.crazy.twist.model.OrderPreviewRequest;
 import com.crazy.twist.order.constant.Constants;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -29,8 +30,8 @@ public class OrderController {
     private OrderServiceI orderServiceI;
 
     @PostMapping("/fork/preview")
-    public SingleResponse<OrderDTO> previewOrder(@RequestBody OrderPreviewQry orderPreviewQry) {
-        orderPreviewQry = OrderPreviewQry.builder()
+    public SingleResponse<OrderDTO> previewOrder(@RequestBody OrderPreviewRequest orderPreviewRequest) {
+        OrderPreviewQry orderPreviewQry = OrderPreviewQry.builder()
                 .bizScenario(BizScenario.valueOf(Constants.BIZ_TOB, Constants.USE_CASE_ZD_PORK, Constants.ORDER_PREVIEW))
                 .biz(Constants.BIZ_TOB)
                 .build();

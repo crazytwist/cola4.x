@@ -20,8 +20,8 @@ public class OrderPreviewConvertorExt implements OrderPreviewConvertorExtPt {
 
     @Override
     public OrderEntity clientToEntity(OrderPreviewQry orderPreviewQry) {
-        System.out.println("[数据转换] : tob 业务 下 猪肉 的 渠道方式 ");
-        String channel = orderPreviewQry.getOrderDTO().getChannel().equals("10001") ? "线上团购" : "线下购买";
+        System.out.println("03 [数据转换] : tob 业务 下 猪肉 的 渠道方式 ");
+//        String channel = orderPreviewQry.getOrderDTO().getChannel().equals("10001") ? "线上团购" : "线下购买";
         return OrderEntity.builder().build();
     }
 }

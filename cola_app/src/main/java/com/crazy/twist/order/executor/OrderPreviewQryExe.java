@@ -29,13 +29,13 @@ public class OrderPreviewQryExe {
 
     public SingleResponse<OrderDTO> execute(OrderPreviewQry orderPreviewQry) {
 
-        logger.info("Start processing command:" + orderPreviewQry);
+        logger.info("01 Start processing command:" + orderPreviewQry);
 
         extensionExecutor.executeVoid(OrderPreviewValidateExtPt.class, orderPreviewQry.getBizScenario(), extension -> extension.validate(orderPreviewQry));
 
         OrderEntity orderEntity = extensionExecutor.execute(OrderPreviewConvertorExtPt.class, orderPreviewQry.getBizScenario(), extension -> extension.clientToEntity(orderPreviewQry));
 
-        logger.info("Call Domain Entity for business logic processing..."+orderEntity);
+        logger.info("04 Call Domain Entity for business logic processing..."+orderEntity);
 
         return orderEntity.previewOrder();
     }

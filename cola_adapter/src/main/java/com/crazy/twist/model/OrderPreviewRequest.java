@@ -15,5 +15,6 @@ public class OrderPreviewRequest implements Serializable {
 
     private static final long serialVersionUID = -8139614679508590081L;
 
+    private String orderId;
 
 }
